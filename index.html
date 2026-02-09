@@ -3,253 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Granja Porcina del Norte | Cerdos Premium de Tito Asansa</title>
+    <title>Punto Celular | Accesorios Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root {
-            --amarillo: #FFD700;
-            --verde: #228B22;
-            --blanco: #FFFFFF;
-        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Roboto', sans-serif;
         }
-        .bg-amarillo { background-color: var(--amarillo); }
-        .text-verde { color: var(--verde); }
-        .bg-verde { background-color: var(--verde); }
-        .border-verde { border-color: var(--verde); }
+        h1, h2, h3, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-punto-red { background-color: #E61E2A; }
+        .text-punto-red { color: #E61E2A; }
+        .border-punto-red { border-color: #E61E2A; }
+        .hover-bg-red:hover { background-color: #C11822; }
         
-        .hero-gradient {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+        /* Animación suave para el botón de WhatsApp */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        .cta-button {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .whatsapp-btn {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-white text-black">
 
-    <!-- Navegación -->
-    <nav class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-12 h-12 bg-verde rounded-full flex items-center justify-center">
-                    <i class="fas fa-piggy-bank text-white text-2xl"></i>
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-punto-red rounded-lg flex items-center justify-center">
+                    <i data-lucide="smartphone" class="text-white"></i>
                 </div>
-                <span class="text-2xl font-bold text-verde">Granja Porcina del Norte</span>
+                <span class="text-2xl font-bold tracking-tighter">PUNTO <span class="text-punto-red">CELULAR</span></span>
             </div>
-            <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
-                <a href="#inicio" class="hover:text-verde transition">Inicio</a>
-                <a href="#granja" class="hover:text-verde transition">La Granja</a>
-                <a href="#ventas" class="hover:text-verde transition">Ventas</a>
-                <a href="#contacto" class="hover:text-verde transition">Contacto</a>
-            </div>
-            <a href="#ventas" class="bg-verde text-white px-6 py-2 rounded-full font-bold cta-button">Comprar Ahora</a>
+            <a href="https://maps.app.goo.gl/8B7idxKurygfZhw39" target="_blank" class="hidden sm:flex items-center gap-2 bg-black text-white px-5 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors">
+                <i data-lucide="map-pin" class="w-4 h-4 text-punto-red"></i>
+                Ubicación
+            </a>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-gradient h-[85vh] flex items-center text-center px-6">
-        <div class="container mx-auto text-white">
-            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
-                El Alma de tu Fiesta Empieza Aquí: <br>
-                <span class="text-amarillo">Cerdos Premium Listos para el Horno</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-light">
-                Garantizamos la máxima calidad y limpieza en cada ejemplar. Propiedad de <strong>Tito Asansa</strong>, donde la tradición y la tecnología se unen para tu mesa.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#ventas" class="bg-amarillo text-black px-10 py-4 rounded-xl text-xl font-black uppercase tracking-wider cta-button">
-                    ¡Quiero mi Chanchito ahora!
-                </a>
-                <a href="#granja" class="bg-white text-verde px-10 py-4 rounded-xl text-xl font-bold hover:bg-gray-100 transition">
-                    Conocer la Granja
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Propuesta de Valor / Beneficios -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-verde mb-16 italic">¿Por qué elegir Granja Porcina del Norte?</h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-8 border-verde">
-                    <div class="w-20 h-20 bg-amarillo rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-soap text-3xl text-black"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Limpieza Total</h3>
-                    <p class="text-gray-600">Entregamos tu cerdo "peladito" y perfectamente limpio. Sin complicaciones, directo para sazonar y hornear.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-8 border-amarillo">
-                    <div class="w-20 h-20 bg-verde rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-clipboard-check text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Crianza Organizada</h3>
-                    <p class="text-gray-600">Más de 200 cerdos criados con estándares tecnificados. Nutrición controlada para un sabor inigualable.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-8 border-verde">
-                    <div class="w-20 h-20 bg-amarillo rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-truck-fast text-3xl text-black"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Listo para el Evento</h3>
-                    <p class="text-gray-600">Ya sea boda, XV años o parrillada familiar, tenemos el tamaño ideal para que tu fiesta sea un éxito rotundo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- La Granja / Galería -->
-    <section id="granja" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-bold text-verde mb-6 leading-tight">Infraestructura de Vanguardia <br>y Cuidado Ético</h2>
-                    <p class="text-lg text-gray-700 mb-6">
-                        Tito Asansa ha diseñado una de las granjas más bonitas y organizadas de la región. Aquí, cada detalle cuenta: desde la ventilación hasta la higiene diaria. 
-                    </p>
-                    <ul class="space-y-4 text-lg font-medium text-gray-800">
-                        <li><i class="fas fa-check-circle text-verde mr-2"></i> Capacidad para más de 200 cerdos.</li>
-                        <li><i class="fas fa-check-circle text-verde mr-2"></i> Ambiente libre de estrés.</li>
-                        <li><i class="fas fa-check-circle text-verde mr-2"></i> Supervisión técnica constante.</li>
-                    </ul>
-                </div>
-                <div class="md:w-1/2 grid grid-cols-2 gap-4">
-                    <div class="bg-gray-200 h-64 rounded-xl overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1594145014389-13898089408e?auto=format&fit=crop&w=600&q=80" alt="Granja Organizada" class="w-full h-full object-cover hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="bg-gray-200 h-64 rounded-xl overflow-hidden shadow-md mt-8">
-                        <img src="https://images.unsplash.com/photo-1545155696-6e114761001a?auto=format&fit=crop&w=600&q=80" alt="Cerdos de Calidad" class="w-full h-full object-cover hover:scale-110 transition duration-500">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ventas -->
-    <section id="ventas" class="py-20 bg-verde text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-amarillo">Ventas al Por Mayor y Menor</h2>
-            <p class="text-xl mb-12">Elige la opción que mejor se adapte a tu necesidad</p>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Por Menor -->
-                <div class="bg-white text-black p-10 rounded-3xl shadow-2xl">
-                    <h3 class="text-3xl font-bold mb-4 text-verde">Eventos Especiales</h3>
-                    <p class="text-gray-600 mb-6">Ideal para bodas, quinceañeras y parrilladas familiares. Te asesoramos sobre el peso ideal para tus invitados.</p>
-                    <div class="text-4xl font-black mb-6 text-verde">Calidad Garantizada</div>
-                    <a href="https://wa.me/yourphonenumber?text=Hola%20Tito,%20quiero%20un%20chanchito%20para%20mi%20evento." target="_blank" class="block w-full bg-amarillo text-black py-4 rounded-xl font-bold uppercase tracking-wider cta-button">
-                        Cotizar para mi Fiesta
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute top-0 right-0 -z-10 w-1/3 h-full bg-gray-50 skew-x-12 translate-x-20"></div>
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block px-4 py-1 bg-punto-red/10 text-punto-red rounded-full text-sm font-bold mb-6">LO ÚLTIMO EN TECNOLOGÍA</span>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+                    Tu estilo, tu ritmo, tu conexión. <br>
+                    <span class="text-punto-red">Dale a tu tecnología el outfit que merece.</span>
+                </h1>
+                <p class="text-gray-600 text-xl mb-10 max-w-lg">
+                    Encuentra los accesorios más resistentes y con mayor tendencia para tu smartphone en un solo lugar.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- Botón de compra que también dirige a WhatsApp con mensaje de interés -->
+                    <a href="https://wa.me/593987201563?text=Hola%20Punto%20Celular,%20vengo%20desde%20su%20p%C3%A1gina%20web%20y%20me%20interesan%20sus%20productos." target="_blank" class="bg-punto-red text-white px-8 py-4 rounded-xl font-bold text-lg hover-bg-red transition-all shadow-lg shadow-red-500/25 flex items-center justify-center gap-2">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        ¡COMPRAR AHORA!
                     </a>
-                </div>
-                
-                <!-- Por Mayor -->
-                <div class="bg-amarillo text-black p-10 rounded-3xl shadow-2xl scale-105">
-                    <div class="bg-verde text-white text-sm font-bold py-1 px-4 rounded-full inline-block mb-4">MÁS POPULAR</div>
-                    <h3 class="text-3xl font-bold mb-4">Venta al Por Mayor</h3>
-                    <p class="text-gray-800 mb-6">Para restaurantes, carnicerías o negocios. Precios especiales por volumen y suministros constantes.</p>
-                    <div class="text-4xl font-black mb-6 text-verde">Precios de Granja</div>
-                    <a href="https://wa.me/yourphonenumber?text=Hola%20Tito,%20estoy%20interesado%20en%20compras%20al%20por%20mayor." target="_blank" class="block w-full bg-verde text-white py-4 rounded-xl font-bold uppercase tracking-wider cta-button">
-                        Hacer Pedido Grande
+                    <a href="https://maps.app.goo.gl/8B7idxKurygfZhw39" class="sm:hidden flex items-center justify-center gap-2 border-2 border-black px-8 py-4 rounded-xl font-bold">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        VER UBICACIÓN
                     </a>
                 </div>
             </div>
+            <div class="relative">
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=2068&auto=format&fit=crop" alt="Accesorios Smartphone" class="w-full h-full object-cover">
+                </div>
+                <!-- Decoración -->
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-punto-red -z-10 rounded-2xl"></div>
+                <div class="absolute -top-6 -right-6 w-32 h-32 border-4 border-black -z-10 rounded-2xl"></div>
+            </div>
         </div>
     </section>
 
-    <!-- Proceso de Entrega -->
-    <section class="py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-verde mb-12 italic">Nuestro Proceso: Directo a tu mesa</h2>
-            <div class="flex flex-col md:flex-row justify-around items-center gap-8">
-                <div class="max-w-xs">
-                    <div class="text-5xl font-black text-amarillo mb-4">01</div>
-                    <h4 class="text-xl font-bold mb-2">Selección</h4>
-                    <p class="text-gray-600">Escogemos el ejemplar perfecto para el tamaño de tu evento.</p>
+    <!-- Beneficios Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Tecnología de Vanguardia</h2>
+                <div class="w-20 h-1 bg-punto-red mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-punto-red transition-colors group text-center">
+                    <div class="w-16 h-16 bg-punto-red/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-punto-red transition-colors">
+                        <i data-lucide="zap" class="w-8 h-8 text-punto-red group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Carga Ultra Rápida</h3>
+                    <p class="text-gray-400">Power banks y cargadores certificados para optimizar el tiempo de vida de tu batería.</p>
                 </div>
-                <div class="hidden md:block text-verde text-4xl">
-                    <i class="fas fa-arrow-right"></i>
+                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-punto-red transition-colors group text-center">
+                    <div class="w-16 h-16 bg-punto-red/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-punto-red transition-colors">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-punto-red group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Protección Militar</h3>
+                    <p class="text-gray-400">Cases diseñados con materiales de alta absorción de impacto para caídas extremas.</p>
                 </div>
-                <div class="max-w-xs">
-                    <div class="text-5xl font-black text-amarillo mb-4">02</div>
-                    <h4 class="text-xl font-bold mb-2">Faenado Limpio</h4>
-                    <p class="text-gray-600">Limpieza profunda y retiro de vellos. Te lo entregamos impecable.</p>
-                </div>
-                <div class="hidden md:block text-verde text-4xl">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="max-w-xs">
-                    <div class="text-5xl font-black text-amarillo mb-4">03</div>
-                    <h4 class="text-xl font-bold mb-2">¡Al Horno!</h4>
-                    <p class="text-gray-600">De nuestra granja a tu cocina, listo para el festín inolvidable.</p>
+                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-punto-red transition-colors group text-center">
+                    <div class="w-16 h-16 bg-punto-red/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-punto-red transition-colors">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-punto-red group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Estilo Vanguardista</h3>
+                    <p class="text-gray-400">Diseños que complementan tu personalidad con los colores de temporada.</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center italic">Lo que dicen nuestros clientes...</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-punto-red shadow-sm">
+                    <div class="flex text-yellow-500 mb-4">
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Increíble resistencia. Mi teléfono cayó de la moto y el case lo protegió perfectamente. ¡Muy recomendados!"</p>
+                    <div class="font-bold text-black">- Carlos Martínez</div>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-punto-red shadow-sm">
+                    <div class="flex text-yellow-500 mb-4">
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"El cargador de carga rápida realmente funciona como prometen. La calidad de los materiales se nota al tacto."</p>
+                    <div class="font-bold text-black">- Andrea Vaca</div>
+                </div>
+                <!-- Testimonio 3 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-punto-red shadow-sm">
+                    <div class="flex text-yellow-500 mb-4">
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                        <i data-lucide="star" class="fill-current w-4"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Compré un protector de pantalla hace 6 meses y sigue intacto. No pierden transparencia ni se rayan fácilmente."</p>
+                    <div class="font-bold text-black">- Javier Ortiz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Section -->
+    <section class="py-20 bg-punto-red text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl font-bold mb-6">¿Quieres visitarnos?</h2>
+            <p class="text-xl mb-10 opacity-90 max-w-2xl mx-auto">Te esperamos en nuestro local físico con la mejor atención personalizada y stock disponible para entrega inmediata.</p>
+            <a href="https://maps.app.goo.gl/8B7idxKurygfZhw39" target="_blank" class="bg-white text-punto-red px-10 py-5 rounded-full font-bold text-xl hover:bg-black hover:text-white transition-all shadow-xl inline-flex items-center gap-3">
+                <i data-lucide="map-pin"></i>
+                VER EN GOOGLE MAPS
+            </a>
+        </div>
+        <!-- Fondo decorativo -->
+        <i data-lucide="navigation" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-10 -rotate-12"></i>
     </section>
 
     <!-- Footer -->
-    <footer id="contacto" class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
-            <div>
-                <h4 class="text-2xl font-bold text-amarillo mb-4">Granja Porcina del Norte</h4>
-                <p class="text-gray-400">La mejor carne de cerdo de la región. Limpieza, calidad y confianza con Tito Asansa.</p>
-            </div>
-            <div>
-                <h4 class="text-xl font-bold mb-4">Enlaces Rápidos</h4>
-                <ul class="text-gray-400 space-y-2">
-                    <li><a href="#inicio" class="hover:text-amarillo">Inicio</a></li>
-                    <li><a href="#granja" class="hover:text-amarillo">Nuestra Granja</a></li>
-                    <li><a href="#ventas" class="hover:text-amarillo">Precios y Ventas</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xl font-bold mb-4">Contáctanos</h4>
-                <p class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> Zona Norte, Granja Tito Asansa</p>
-                <p class="text-gray-400"><i class="fas fa-phone mr-2"></i> +123 456 7890</p>
-                <div class="flex space-x-4 mt-6">
-                    <a href="#" class="text-2xl hover:text-amarillo transition"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-2xl hover:text-amarillo transition"><i class="fab fa-instagram"></i></a>
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-punto-red rounded flex items-center justify-center">
+                        <i data-lucide="smartphone" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">PUNTO <span class="text-punto-red">CELULAR</span></span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://www.facebook.com/profile.php?id=61581921847853" target="_blank" class="hover:text-punto-red transition-colors flex items-center gap-2 text-lg">
+                        <i data-lucide="facebook"></i>
+                        Facebook
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="text-center mt-12 pt-8 border-t border-gray-800 text-gray-500">
-            &copy; 2024 Granja Porcina del Norte. Todos los derechos reservados.
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>Punto Celular © 2026 - Conectando tu mundo.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Flotante -->
-    <a href="https://wa.me/yourphonenumber?text=Hola%20Tito,%20vi%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20un%20chanchito." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp text-2xl mr-2"></i>
-        <span class="font-bold">¡Reserva tu Chanchito ahora!</span>
+    <!-- WhatsApp Flotante con mensaje predefinido -->
+    <a href="https://wa.me/593987201563?text=Hola%20Punto%20Celular,%20vengo%20desde%20su%20p%C3%A1gina%20web%20y%20me%20interesan%20sus%20productos." target="_blank" class="whatsapp-btn fixed bottom-6 right-6 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 whitespace-nowrap font-bold">
+            ¡Chatea con nosotros!
+        </span>
     </a>
 
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+    </script>
 </body>
 </html>
