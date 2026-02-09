@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punto Celular | Accesorios Premium</title>
+    <title>Punto Celular | Tienda Oficial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        h1, h2, h3, .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
-        }
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, .font-montserrat { font-family: 'Montserrat', sans-serif; }
         .bg-punto-red { background-color: #E61E2A; }
         .text-punto-red { color: #E61E2A; }
-        .border-punto-red { border-color: #E61E2A; }
         .hover-bg-red:hover { background-color: #C11822; }
         
-        /* Animación suave para el botón de WhatsApp */
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        .whatsapp-btn {
-            animation: pulse 2s infinite;
+        .whatsapp-btn { animation: pulse 2s infinite; }
+        
+        .cart-sidebar {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
         }
+        .cart-sidebar.open { transform: translateX(0); }
     </style>
 </head>
 <body class="bg-white text-black">
@@ -39,177 +37,339 @@
                 <div class="w-10 h-10 bg-punto-red rounded-lg flex items-center justify-center">
                     <i data-lucide="smartphone" class="text-white"></i>
                 </div>
-                <span class="text-2xl font-bold tracking-tighter">PUNTO <span class="text-punto-red">CELULAR</span></span>
+                <span class="text-2xl font-bold tracking-tighter uppercase">Punto <span class="text-punto-red">Celular</span></span>
             </div>
-            <a href="https://maps.app.goo.gl/8B7idxKurygfZhw39" target="_blank" class="hidden sm:flex items-center gap-2 bg-black text-white px-5 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors">
-                <i data-lucide="map-pin" class="w-4 h-4 text-punto-red"></i>
-                Ubicación
-            </a>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-punto-red text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </button>
+                <a href="https://maps.app.goo.gl/8B7idxKurygfZhw39" target="_blank" class="hidden md:flex items-center gap-2 bg-black text-white px-5 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-punto-red"></i>
+                    Tienda Física
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute top-0 right-0 -z-10 w-1/3 h-full bg-gray-50 skew-x-12 translate-x-20"></div>
-        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="inline-block px-4 py-1 bg-punto-red/10 text-punto-red rounded-full text-sm font-bold mb-6">LO ÚLTIMO EN TECNOLOGÍA</span>
-                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                    Tu estilo, tu ritmo, tu conexión. <br>
-                    <span class="text-punto-red">Dale a tu tecnología el outfit que merece.</span>
-                </h1>
-                <p class="text-gray-600 text-xl mb-10 max-w-lg">
-                    Encuentra los accesorios más resistentes y con mayor tendencia para tu smartphone en un solo lugar.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <!-- Botón de compra que también dirige a WhatsApp con mensaje de interés -->
-                    <a href="https://wa.me/593987201563?text=Hola%20Punto%20Celular,%20vengo%20desde%20su%20p%C3%A1gina%20web%20y%20me%20interesan%20sus%20productos." target="_blank" class="bg-punto-red text-white px-8 py-4 rounded-xl font-bold text-lg hover-bg-red transition-all shadow-lg shadow-red-500/25 flex items-center justify-center gap-2">
-                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                        ¡COMPRAR AHORA!
-                    </a>
-                    <a href="https://maps.app.goo.gl/8B7idxKurygfZhw39" class="sm:hidden flex items-center justify-center gap-2 border-2 border-black px-8 py-4 rounded-xl font-bold">
-                        <i data-lucide="map-pin" class="w-5 h-5"></i>
-                        VER UBICACIÓN
-                    </a>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=2068&auto=format&fit=crop" alt="Accesorios Smartphone" class="w-full h-full object-cover">
-                </div>
-                <!-- Decoración -->
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-punto-red -z-10 rounded-2xl"></div>
-                <div class="absolute -top-6 -right-6 w-32 h-32 border-4 border-black -z-10 rounded-2xl"></div>
-            </div>
+    <!-- Hero -->
+    <section class="pt-32 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 italic">TU TECNOLOGÍA AL <span class="text-punto-red">SIGUIENTE NIVEL</span></h1>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Explora nuestro catálogo de accesorios premium y personaliza tu smartphone con la mejor protección y estilo.</p>
         </div>
     </section>
 
-    <!-- Beneficios Section -->
-    <section class="py-20 bg-black text-white">
+    <!-- Productos -->
+    <section class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Tecnología de Vanguardia</h2>
-                <div class="w-20 h-1 bg-punto-red mx-auto"></div>
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="text-3xl font-bold">Nuestros Productos</h2>
+                <div class="h-1 flex-grow mx-6 bg-gray-200 hidden md:block"></div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-punto-red transition-colors group text-center">
-                    <div class="w-16 h-16 bg-punto-red/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-punto-red transition-colors">
-                        <i data-lucide="zap" class="w-8 h-8 text-punto-red group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Carga Ultra Rápida</h3>
-                    <p class="text-gray-400">Power banks y cargadores certificados para optimizar el tiempo de vida de tu batería.</p>
-                </div>
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-punto-red transition-colors group text-center">
-                    <div class="w-16 h-16 bg-punto-red/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-punto-red transition-colors">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-punto-red group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Protección Militar</h3>
-                    <p class="text-gray-400">Cases diseñados con materiales de alta absorción de impacto para caídas extremas.</p>
-                </div>
-                <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-punto-red transition-colors group text-center">
-                    <div class="w-16 h-16 bg-punto-red/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-punto-red transition-colors">
-                        <i data-lucide="smartphone" class="w-8 h-8 text-punto-red group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Estilo Vanguardista</h3>
-                    <p class="text-gray-400">Diseños que complementan tu personalidad con los colores de temporada.</p>
-                </div>
+            
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Los productos se cargan vía JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Testimonios Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center italic">Lo que dicen nuestros clientes...</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonio 1 -->
-                <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-punto-red shadow-sm">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
+    <!-- Sección de Pago y Ubicación (Footer informativo) -->
+    <section class="py-20 bg-white border-t">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+            <div class="bg-gray-50 p-8 rounded-3xl">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i data-lucide="landmark" class="text-punto-red"></i> Datos de Pago
+                </h3>
+                <div class="space-y-4 text-gray-700">
+                    <div class="p-4 bg-white rounded-xl border border-gray-200">
+                        <p class="text-sm text-gray-500 uppercase font-bold">Banco Pichincha</p>
+                        <p class="text-lg font-bold">Cuenta Ahorros: 2201234567</p>
+                        <p class="text-sm">Titular: Punto Celular S.A.</p>
+                        <p class="text-sm italic">CI: 1700000000</p>
                     </div>
-                    <p class="text-gray-700 mb-6 italic">"Increíble resistencia. Mi teléfono cayó de la moto y el case lo protegió perfectamente. ¡Muy recomendados!"</p>
-                    <div class="font-bold text-black">- Carlos Martínez</div>
-                </div>
-                <!-- Testimonio 2 -->
-                <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-punto-red shadow-sm">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
+                    <div class="p-4 bg-white rounded-xl border border-gray-200">
+                        <p class="text-sm text-gray-500 uppercase font-bold">Banco Guayaquil</p>
+                        <p class="text-lg font-bold">Cuenta Corriente: 10987654</p>
+                        <p class="text-sm">Titular: Punto Celular S.A.</p>
                     </div>
-                    <p class="text-gray-700 mb-6 italic">"El cargador de carga rápida realmente funciona como prometen. La calidad de los materiales se nota al tacto."</p>
-                    <div class="font-bold text-black">- Andrea Vaca</div>
-                </div>
-                <!-- Testimonio 3 -->
-                <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-punto-red shadow-sm">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                        <i data-lucide="star" class="fill-current w-4"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">"Compré un protector de pantalla hace 6 meses y sigue intacto. No pierden transparencia ni se rayan fácilmente."</p>
-                    <div class="font-bold text-black">- Javier Ortiz</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Ubicación Section -->
-    <section class="py-20 bg-punto-red text-white overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-            <h2 class="text-4xl font-bold mb-6">¿Quieres visitarnos?</h2>
-            <p class="text-xl mb-10 opacity-90 max-w-2xl mx-auto">Te esperamos en nuestro local físico con la mejor atención personalizada y stock disponible para entrega inmediata.</p>
-            <a href="https://maps.app.goo.gl/8B7idxKurygfZhw39" target="_blank" class="bg-white text-punto-red px-10 py-5 rounded-full font-bold text-xl hover:bg-black hover:text-white transition-all shadow-xl inline-flex items-center gap-3">
-                <i data-lucide="map-pin"></i>
-                VER EN GOOGLE MAPS
-            </a>
-        </div>
-        <!-- Fondo decorativo -->
-        <i data-lucide="navigation" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-10 -rotate-12"></i>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-punto-red rounded flex items-center justify-center">
-                        <i data-lucide="smartphone" class="w-5 h-5 text-white"></i>
-                    </div>
-                    <span class="text-xl font-bold">PUNTO <span class="text-punto-red">CELULAR</span></span>
-                </div>
-                <div class="flex gap-6">
-                    <a href="https://www.facebook.com/profile.php?id=61581921847853" target="_blank" class="hover:text-punto-red transition-colors flex items-center gap-2 text-lg">
-                        <i data-lucide="facebook"></i>
-                        Facebook
+            <div class="flex flex-col justify-center">
+                <h3 class="text-2xl font-bold mb-6 italic">¿LISTO PARA TU PEDIDO?</h3>
+                <p class="text-gray-600 mb-8 text-lg">Agrega tus productos favoritos al carrito, selecciona tu método de entrega y envíanos el pedido por WhatsApp. ¡Te responderemos en minutos!</p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/profile.php?id=61581921847853" target="_blank" class="flex items-center gap-2 text-blue-600 font-bold hover:underline">
+                        <i data-lucide="facebook"></i> Síguenos en Facebook
                     </a>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                <p>Punto Celular © 2026 - Conectando tu mundo.</p>
-            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- WhatsApp Flotante con mensaje predefinido -->
-    <a href="https://wa.me/593987201563?text=Hola%20Punto%20Celular,%20vengo%20desde%20su%20p%C3%A1gina%20web%20y%20me%20interesan%20sus%20productos." target="_blank" class="whatsapp-btn fixed bottom-6 right-6 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group">
-        <i data-lucide="message-circle" class="w-8 h-8"></i>
-        <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 whitespace-nowrap font-bold">
-            ¡Chatea con nosotros!
-        </span>
-    </a>
+    <!-- Carrito Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar fixed top-0 right-0 h-full w-full md:w-[450px] bg-white z-[100] shadow-2xl flex flex-col">
+        <div class="p-6 border-b flex items-center justify-between bg-black text-white">
+            <h2 class="text-xl font-bold flex items-center gap-2">
+                <i data-lucide="shopping-cart"></i> Mi Carrito
+            </h2>
+            <button onclick="toggleCart()" class="p-2 hover:bg-gray-800 rounded-full transition-colors">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4">
+            <!-- Items del carrito -->
+            <p class="text-center text-gray-500 mt-10">Tu carrito está vacío.</p>
+        </div>
+
+        <div class="p-6 border-t bg-gray-50">
+            <!-- Método de entrega -->
+            <div class="mb-6">
+                <p class="font-bold mb-3">Método de entrega:</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="setDelivery('domicilio')" id="btn-domicilio" class="p-3 border-2 border-punto-red bg-white text-punto-red rounded-xl font-bold text-sm flex flex-col items-center gap-1 transition-all">
+                        <i data-lucide="truck" class="w-5 h-5"></i> A domicilio
+                    </button>
+                    <button onclick="setDelivery('tienda')" id="btn-tienda" class="p-3 border-2 border-gray-200 bg-white text-gray-400 rounded-xl font-bold text-sm flex flex-col items-center gap-1 transition-all">
+                        <i data-lucide="store" class="w-5 h-5"></i> Retiro en tienda
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botón Ubicación -->
+            <div id="location-container" class="mb-6">
+                <button onclick="getLocation()" id="btn-location" class="w-full py-3 bg-black text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-punto-red"></i>
+                    <span id="location-text">Obtener mi ubicación actual</span>
+                </button>
+            </div>
+
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-gray-600 font-medium text-lg">Total a pagar:</span>
+                <span id="cart-total" class="text-3xl font-bold text-punto-red">$0.00</span>
+            </div>
+
+            <button onclick="checkout()" class="w-full py-4 bg-punto-red text-white rounded-2xl font-bold text-lg hover-bg-red transition-all shadow-xl flex items-center justify-center gap-3">
+                <i data-lucide="send"></i>
+                PEDIR POR WHATSAPP
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay Carrito -->
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/50 z-[90] hidden backdrop-blur-sm"></div>
 
     <script>
-        // Inicializar iconos de Lucide
-        lucide.createIcons();
+        const products = [
+            { id: 1, name: "Case Impact Pro Red", price: 15.00, img: "https://images.unsplash.com/photo-1541873676947-d3493864ee0b?auto=format&fit=crop&q=80&w=200", category: "Protección" },
+            { id: 2, name: "Cargador 25W Fast", price: 25.00, img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&q=80&w=200", category: "Energía" },
+            { id: 3, name: "Protector Cerámico HD", price: 10.00, img: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=200", category: "Protección" },
+            { id: 4, name: "Cable USB-C Reforzado", price: 8.50, img: "https://images.unsplash.com/photo-1588156979435-379b9d802b0a?auto=format&fit=crop&q=80&w=200", category: "Energía" },
+            { id: 5, name: "Audífonos Air Bass", price: 35.00, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200", category: "Audio" },
+            { id: 6, name: "Soporte Auto Magnético", price: 12.00, img: "https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?auto=format&fit=crop&q=80&w=200", category: "Accesorios" },
+            { id: 7, name: "Aro de Luz 10 Pulgadas", price: 20.00, img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=200", category: "Streaming" },
+            { id: 8, name: "Case Transparente Magsafe", price: 18.00, img: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=200", category: "Protección" },
+            { id: 9, name: "PowerBank 10,000mAh", price: 30.00, img: "https://images.unsplash.com/photo-1609592424089-9833f208ce8a?auto=format&fit=crop&q=80&w=200", category: "Energía" },
+            { id: 10, name: "Adaptador OTG Premium", price: 5.00, img: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&q=80&w=200", category: "Accesorios" }
+        ];
+
+        let cart = [];
+        let deliveryMethod = 'domicilio';
+        let userLocation = '';
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all group">
+                    <div class="h-48 overflow-hidden bg-gray-100">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">${p.category}</span>
+                        <h3 class="font-bold text-sm mb-2 h-10 line-clamp-2">${p.name}</h3>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-punto-red font-bold text-lg">$${p.price.toFixed(2)}</span>
+                            <div class="flex items-center bg-gray-50 rounded-lg p-1">
+                                <button onclick="updateQty(${p.id}, -1)" class="w-8 h-8 flex items-center justify-center hover:bg-gray-200 rounded-md transition-colors">-</button>
+                                <span id="qty-${p.id}" class="w-8 text-center font-bold text-xs">0</span>
+                                <button onclick="updateQty(${p.id}, 1)" class="w-8 h-8 flex items-center justify-center hover:bg-gray-200 rounded-md transition-colors text-punto-red">+</button>
+                            </div>
+                        </div>
+                        <button onclick="addToCart(${p.id})" class="w-full mt-4 bg-black text-white py-2 rounded-lg text-xs font-bold hover:bg-gray-800 transition-colors">
+                            AGREGAR AL CARRITO
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function updateQty(id, delta) {
+            const el = document.getElementById(`qty-${id}`);
+            let val = parseInt(el.innerText) + delta;
+            if (val < 0) val = 0;
+            el.innerText = val;
+        }
+
+        function addToCart(id) {
+            const qty = parseInt(document.getElementById(`qty-${id}`).innerText);
+            if (qty === 0) return;
+            
+            const product = products.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+            
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({ ...product, qty });
+            }
+            
+            document.getElementById(`qty-${id}`).innerText = 0;
+            updateCartUI();
+            // Abrir carrito automáticamente al agregar
+            if (!document.getElementById('cart-sidebar').classList.contains('open')) {
+                toggleCart();
+            }
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const countEl = document.getElementById('cart-count');
+            const totalEl = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-500 mt-10">Tu carrito está vacío.</p>';
+                countEl.innerText = 0;
+                totalEl.innerText = '$0.00';
+                return;
+            }
+
+            let total = 0;
+            let count = 0;
+            
+            container.innerHTML = cart.map(item => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                count += item.qty;
+                return `
+                    <div class="flex gap-4 bg-gray-50 p-4 rounded-xl items-center">
+                        <img src="${item.img}" class="w-16 h-16 rounded-lg object-cover">
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-sm leading-tight">${item.name}</h4>
+                            <p class="text-punto-red font-bold">$${item.price.toFixed(2)} x ${item.qty}</p>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-500">
+                            <i data-lucide="trash-2" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+            
+            countEl.innerText = count;
+            totalEl.innerText = `$${total.toFixed(2)}`;
+            lucide.createIcons();
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-sidebar').classList.toggle('open');
+            document.getElementById('cart-overlay').classList.toggle('hidden');
+        }
+
+        function setDelivery(method) {
+            deliveryMethod = method;
+            const btnD = document.getElementById('btn-domicilio');
+            const btnT = document.getElementById('btn-tienda');
+            const locCon = document.getElementById('location-container');
+
+            if (method === 'domicilio') {
+                btnD.classList.add('border-punto-red', 'text-punto-red');
+                btnD.classList.remove('border-gray-200', 'text-gray-400');
+                btnT.classList.add('border-gray-200', 'text-gray-400');
+                btnT.classList.remove('border-punto-red', 'text-punto-red');
+                locCon.classList.remove('hidden');
+            } else {
+                btnT.classList.add('border-punto-red', 'text-punto-red');
+                btnT.classList.remove('border-gray-200', 'text-gray-400');
+                btnD.classList.add('border-gray-200', 'text-gray-400');
+                btnD.classList.remove('border-punto-red', 'text-punto-red');
+                locCon.classList.add('hidden');
+            }
+        }
+
+        function getLocation() {
+            const btn = document.getElementById('btn-location');
+            const text = document.getElementById('location-text');
+            
+            if (!navigator.geolocation) {
+                alert("La geolocalización no es soportada por tu navegador.");
+                return;
+            }
+
+            text.innerText = "Localizando...";
+            btn.classList.add('opacity-50');
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    userLocation = `https://www.google.com/maps?q=${lat},${lng}`;
+                    text.innerText = "📍 Ubicación Cargada Correctamente";
+                    btn.classList.remove('opacity-50');
+                    btn.classList.add('bg-green-600');
+                },
+                (error) => {
+                    text.innerText = "Error al obtener ubicación";
+                    btn.classList.remove('opacity-50', 'bg-black');
+                    btn.classList.add('bg-orange-500');
+                    console.error(error);
+                }
+            );
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
+
+            if (deliveryMethod === 'domicilio' && !userLocation) {
+                alert("Por favor, carga tu ubicación para el envío a domicilio.");
+                return;
+            }
+
+            let message = `🚀 *NUEVO PEDIDO - PUNTO CELULAR*\n\n`;
+            message += `*PRODUCTOS:*\n`;
+            
+            cart.forEach(item => {
+                message += `- ${item.qty}x ${item.name} ($${(item.price * item.qty).toFixed(2)})\n`;
+            });
+
+            const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            message += `\n💰 *TOTAL:* $${total.toFixed(2)}\n`;
+            message += `\n📦 *MÉTODO:* ${deliveryMethod === 'domicilio' ? 'Envío a Domicilio' : 'Retiro en Tienda'}\n`;
+            
+            if (deliveryMethod === 'domicilio') {
+                message += `📍 *UBICACIÓN:* ${userLocation}\n`;
+            }
+
+            message += `\n💳 *PAGO:* Transferencia Bancaria\n`;
+            message += `\n_Vengo desde la página web y quiero confirmar este pedido._`;
+
+            const encodedMsg = encodeURIComponent(message);
+            window.open(`https://wa.me/593987201563?text=${encodedMsg}`, '_blank');
+        }
+
+        // Init
+        window.onload = () => {
+            renderProducts();
+            lucide.createIcons();
+        }
     </script>
 </body>
 </html>
